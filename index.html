@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة السنبلة المتكاملة | ALSUNBULAH Almutakmila Company</title>
+    <!-- Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" id="bootstrap-css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Tajawal & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --orange-main: #e65c00;
+            --orange-dark: #cc5200;
+            --green-main: #00a651;
+            --green-dark: #007a3b;
+            --dark-bg: #111111;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Poppins', sans-serif;
+            color: #222;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-bg);
+            color: #ccc;
+            font-size: 0.88rem;
+            padding: 8px 0;
+            border-bottom: 2px solid var(--orange-main);
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            background: #fff;
+            padding: 10px 0;
+        }
+        .brand-logo-img {
+            max-height: 50px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .nav-link {
+            font-weight: 700;
+            color: #333 !important;
+            margin: 0 6px;
+            transition: all 0.2s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--orange-main) !important;
+        }
+
+        /* Language Switcher Button */
+        .btn-lang {
+            background-color: transparent;
+            color: var(--orange-main);
+            border: 1.5px solid var(--orange-main);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .btn-lang:hover {
+            background-color: var(--orange-main);
+            color: #fff;
+        }
+
+        /* Buttons */
+        .btn-orange {
+            background-color: var(--orange-main);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 8px 20px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(230, 92, 0, 0.3);
+        }
+        .btn-orange:hover {
+            background-color: var(--orange-dark);
+            color: #fff;
+        }
+        .btn-whatsapp-custom {
+            background-color: var(--green-main);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 8px 18px;
+            border: none;
+        }
+        .btn-whatsapp-custom:hover {
+            background-color: var(--green-dark);
+            color: #fff;
+        }
+
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(230, 92, 0, 0.04) 0%, rgba(0, 166, 81, 0.04) 100%);
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .hero-title {
+            font-weight: 900;
+            font-size: 2.1rem;
+            line-height: 1.3;
+            color: #111;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: #555;
+            margin: 15px 0 20px;
+        }
+
+        /* Product Cards */
+        .product-card {
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-card-img-wrapper {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+        }
+        .product-card-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .product-card-img-wrapper img {
+            transform: scale(1.03);
+        }
+        
+        .product-card .card-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 14px 16px;
+        }
+        .product-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .product-card p {
+            font-size: 0.82rem !important;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        .product-card .badge {
+            font-size: 0.72rem;
+            padding: 4px 8px;
+        }
+        .product-card .btn-whatsapp-custom {
+            padding: 7px 12px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+        }
+
+        .feature-img-wrapper {
+            width: 100%;
+            max-height: 350px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .feature-img-wrapper img {
+            max-width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: contain;
+        }
+
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--orange-main);
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #ddd;
+            padding: 40px 0 20px;
+        }
+        footer h5 {
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 18px;
+            border-right: 4px solid var(--orange-main);
+            padding-right: 12px;
+        }
+        html[dir="ltr"] footer h5 {
+            border-right: none;
+            border-left: 4px solid var(--orange-main);
+            padding-right: 0;
+            padding-left: 12px;
+        }
+        footer a {
+            color: #bbb;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: var(--orange-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. الشريط العلوي -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-location-dot text-warning me-1"></i> <span data-key="top_location">طرابلس - الماية، ليبيا</span>
+                <span class="ms-3"><i class="fa-solid fa-envelope text-warning me-1"></i> INFO@alsunbulah.ly</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="tel:+218925417007"><i class="fa-solid fa-phone text-warning me-1"></i> +218 92 541 7007</a>
+                <a href="https://wa.me/218925417007" target="_blank" class="text-success fw-bold"><i class="fa-brands fa-whatsapp me-1"></i> <span data-key="top_whatsapp">واتساب المبيعات</span></a>
+                <button class="btn btn-lang" onclick="toggleLanguage()"><i class="fa-solid fa-globe me-1"></i> <span id="langBtnText">English</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. القائمة الرئيسية -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/imegaes/logo.png.jpeg" onerror="this.onerror=null; this.src='images/logo.jpg';" alt="السنبلة المتكاملة" class="brand-logo-img me-2">
+                <span class="fw-bold fs-4" style="color: var(--orange-main);"><span data-key="brand_1">السنبلة</span> <span style="color: var(--green-main);" data-key="brand_2">المتكاملة</span></span>
+            </a>
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <button class="btn btn-lang" onclick="toggleLanguage()"><span id="langBtnTextMobile">English</span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home" data-key="nav_home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-key="nav_about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products" data-key="nav_products">المنتجات والخلطات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#calculator" data-key="nav_calc">حاسبة الطلبيات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-key="nav_contact">تواصل معنا</a></li>
+                </ul>
+                <div>
+                    <a href="https://wa.me/218925417007" target="_blank" class="btn btn-whatsapp-custom"><i class="fa-brands fa-whatsapp me-2"></i><span data-key="btn_commercial">طلب كمية تجارية</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. القسم الرئيسي (Hero) -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <span class="badge bg-warning text-dark px-3 py-2 fs-6 mb-3 rounded-pill fw-bold">
+                        <i class="fa-solid fa-award me-1"></i> <span data-key="hero_badge">الموزع المعتمد لشركة Komplet الألمانية في ليبيا</span>
+                    </span>
+                    <h1 class="hero-title" data-key="hero_title">من ليبيا إلى الأسواق العالمية… شراكة، جودة، ونمو مستدام</h1>
+                    <p class="hero-subtitle" data-key="hero_subtitle">
+                        شركة ليبية متخصصة في تجارة وتوريد وتوزيع المنتجات الغذائية، وخلطات الخبز الجاهزة، ومحسنات المخبوزات، والمنتجات المجمدة للألبان والمخبوزات بأعلى المعايير.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="https://wa.me/218925417007" target="_blank" class="btn btn-orange"><i class="fa-brands fa-whatsapp me-2"></i><span data-key="btn_sales">تواصل مع المبيعات</span></a>
+                        <a href="#products" class="btn btn-outline-dark fw-bold"><i class="fa-solid fa-wheat-awn me-2"></i><span data-key="btn_catalog">استعرض الكتالوج</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="feature-img-wrapper rounded-4 shadow">
+                        <img src="images/imegaes/why_sunbulah.jpeg.jpeg" onerror="this.onerror=null; this.src='images/why_sunbulah.jpeg.jpeg';" alt="علاش السنبلة خيارك الصح">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. قسم من نحن -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <div class="feature-img-wrapper rounded-4 shadow">
+                        <img src="images/imegaes/who_is_sunbulah.jpeg.jpeg" onerror="this.onerror=null; this.src='images/who_is_sunbulah.jpeg.jpeg';" alt="من هيا السنبلة؟">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold text-dark mb-3" data-key="about_h2">من هيا السنبلة؟</h2>
+                    <h4 class="text-success fw-bold mb-4" data-key="about_h4">وشني اللي يخلينا الشريك الأول لنجاح مشروعك؟</h4>
+                    <p class="text-secondary fs-5 leading-relaxed" data-key="about_p">
+                        شركة السنبلة المتكاملة هي شركة ليبية يقع مقرها في طرابلس (الماية). نعمل على توفير خلطات ومكونات غذائية عالية الجودة من الأسواق العالمية وتطوير قطاع المخابز والصناعات الغذائية عبر شراكات موثوقة ونمو مستدام.
+                    </p>
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-4">
+                            <div class="p-3 bg-light rounded-3 text-center border-top border-warning border-3">
+                                <i class="fa-solid fa-eye fs-2 text-warning mb-2"></i>
+                                <h5 class="fw-bold" data-key="vision_title">رؤيتنا</h5>
+                                <p class="small text-muted mb-0" data-key="vision_desc">أن نكون من الشركات الرائدة في ليبيا في استيراد وتوزيع مكونات المخابز.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-light rounded-3 text-center border-top border-success border-3">
+                                <i class="fa-solid fa-bullseye fs-2 text-success mb-2"></i>
+                                <h5 class="fw-bold" data-key="mission_title">رسالتنا</h5>
+                                <p class="small text-muted mb-0" data-key="mission_desc">توفير منتجات ذات جودة عالية وبناء شراكات موثوقة مع الموردين العالمية.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-light rounded-3 text-center border-top border-warning border-3">
+                                <i class="fa-solid fa-handshake fs-2 text-warning mb-2"></i>
+                                <h5 class="fw-bold" data-key="values_title">قيمنا</h5>
+                                <p class="small text-muted mb-0" data-key="values_desc">الجودة، المصداقية، الالتزام، والشراكة طويلة الأمد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. قسم المنتجات والخلطات -->
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-success px-3 py-2 fs-6 rounded-pill mb-2" data-key="prod_badge">German Quality | جودة ألمانية معتمدة</span>
+                <h2 class="section-title text-center" data-key="prod_title">منتجاتنا وخلطات المخابز المعتمدة</h2>
+                <p class="text-muted fs-6" data-key="prod_sub">تشكيلة خلطات Komplet الألمانية المعتمدة من شركة السنبلة المتكاملة</p>
+            </div>
+            
+            <div class="row g-3">
+                
+                <!-- 1. سر صناعة الباغيت الفرنسي -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-card-img-wrapper">
+                            <img src="images/imegaes/baguette_secret.jpeg.jpeg" onerror="this.onerror=null; this.src='images/baguette_secret.jpeg.jpeg';" alt="سر صناعة الباغيت الفرنسي">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2 align-self-start" data-key="p1_tag">جودة ألمانية</span>
+                            <h4 data-key="p1_title">سر صناعة الباغيت الفرنسي</h4>
+                            <p class="text-muted" data-key="p1_desc">مع خلطة باغيت بريميوم 10 من KOMPLET. جودة ألمانية ممتازة تضمن القوام الهش والقشرة الذهبية.</p>
+                            <div class="mt-auto pt-2">
+                                <a href="https://wa.me/218925417007?text=مرحباً، أرغب في طلب خلطة باغيت بريميوم 10" target="_blank" class="btn btn-whatsapp-custom w-100">
+                                    <i class="fa-brands fa-whatsapp me-1"></i><span data-key="btn_order">اطلب المنتج الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. المميزات والاستخدامات -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-card-img-wrapper">
+                            <img src="images/imegaes/baguette_features.jpeg.jpeg" onerror="this.onerror=null; this.src='images/baguette_features.jpeg.jpeg';" alt="المميزات والاستخدامات">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2 align-self-start" data-key="p2_tag">استخدامات متعددة</span>
+                            <h4 data-key="p2_title">مميزات واستخدامات الخلطة</h4>
+                            <p class="text-muted" data-key="p2_desc">مناسب لإعداد الخبز الأبيض الفرنسي بمختلف أشكاله، وممتاز لتحضير لفائف الباغيت الصغيرة.</p>
+                            <div class="mt-auto pt-2">
+                                <a href="https://wa.me/218925417007?text=مرحباً، أرغب في الاستفسار عن خلطة الباغيت" target="_blank" class="btn btn-whatsapp-custom w-100">
+                                    <i class="fa-brands fa-whatsapp me-1"></i><span data-key="btn_order">اطلب المنتج الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. السر وراء كل خبز صحي ناجح -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-card-img-wrapper">
+                            <img src="images/imegaes/healthy_secret.jpeg.jpeg" onerror="this.onerror=null; this.src='images/healthy_secret.jpeg.jpeg';" alt="السر وراء كل خبز صحي ناجح">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2 align-self-start" data-key="p3_tag">خلطة حبوب Komplet</span>
+                            <h4 data-key="p3_title">سر الخبز الصحي الناجح</h4>
+                            <p class="text-muted" data-key="p3_desc">خلطة الحبوب الألمانية المعتمدة من KOMPLET التي تعطي العجين مرونة فائقة وطعماً ممتازاً.</p>
+                            <div class="mt-auto pt-2">
+                                <a href="https://wa.me/218925417007?text=مرحباً، أرغب في طلب خلطة الحبوب الألمانية" target="_blank" class="btn btn-whatsapp-custom w-100">
+                                    <i class="fa-brands fa-whatsapp me-1"></i><span data-key="btn_order">اطلب المنتج الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. جودة ثابتة في كل رغيف -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-card-img-wrapper">
+                            <img src="images/imegaes/steady_quality.jpeg.jpeg" onerror="this.onerror=null; this.src='images/steady_quality.jpeg.jpeg';" alt="جودة ثابتة في كل رغيف">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2 align-self-start" data-key="p4_tag">استقرار وجودة</span>
+                            <h4 data-key="p4_title">جودة ثابتة في كل رغيف</h4>
+                            <p class="text-muted" data-key="p4_desc">ضمان استقرار نتائج العجن والخبز يومياً في مخبزك بأعلى المعايير الألمانية المعتمدة.</p>
+                            <div class="mt-auto pt-2">
+                                <a href="https://wa.me/218925417007?text=مرحباً، أرغب في طلب خلطات كومبليت" target="_blank" class="btn btn-whatsapp-custom w-100">
+                                    <i class="fa-brands fa-whatsapp me-1"></i><span data-key="btn_order">اطلب المنتج الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. حاسبة الطلبيات -->
+    <section id="calculator" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow border border-light text-center">
+                        <h3 class="fw-bold text-dark mb-2">
+                            <i class="fa-solid fa-calculator text-warning me-2"></i><span data-key="calc_title">حاسبة طلبيات المخابز والمصانع</span>
+                        </h3>
+                        <p class="text-muted mb-4" data-key="calc_sub">أدخل كمية العبوات المطلوبة لتصلك التفاصيل فوراً عبر الواتساب المباشر للشركة.</p>
+                        
+                        <form id="calcForm" class="text-start">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold" data-key="calc_product_lbl">اختر نوع المنتج / الخلطة المطلوب:</label>
+                                <select id="productSelect" class="form-select form-select-lg">
+                                    <option value="كومبليت باغيت بريميوم 10 (عبوة 10 كجم)">كومبليت باغيت بريميوم 10 (عبوة 10 كجم)</option>
+                                    <option value="خلطة حبوب خبز الشيا والأوميغا 3">خلطة حبوب خبز الشيا والأوميغا 3 (مخبوزات صحية)</option>
+                                    <option value="خلطة الحبوب الألمانية (السر وراء الخبز الصحي)">خلطة الحبوب الألمانية (السر وراء الخبز الصحي)</option>
+                                    <option value="محسنات الخبز والمواد الخام">محسنات الخبز والمواد الخام</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" data-key="calc_qty_lbl">عدد الأكياس / العبوات:</label>
+                                <input type="number" id="bagQty" class="form-control form-control-lg" value="10" min="1">
+                            </div>
+                            <button type="button" onclick="sendOrder()" class="btn btn-whatsapp-custom btn-lg w-100">
+                                <i class="fa-brands fa-whatsapp me-2"></i><span data-key="btn_send_calc">إرسال الطلب عبر الواتساب المباشر</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. الفوتر -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold" data-key="f_col1_title">شركة السنبلة المتكاملة</h5>
+                    <p class="small text-secondary" data-key="f_col1_desc">
+                        ALSUNBULAH Almutakmila Company<br>
+                        شركة ليبية متخصصة في تجارة وتوريد وتوزيع المنتجات الغذائية ومكونات المخابز والصناعات الغذائية.
+                    </p>
+                    <p class="small text-white"><i class="fa-solid fa-location-dot me-2 text-warning"></i><span data-key="f_col1_addr">المقر الرئيسي: ليبيا / طرابلس / الماية</span></p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold" data-key="f_col2_title">أرقام التواصل والطلبات</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="fa-solid fa-phone text-warning me-2"></i><span data-key="f_tel_main">هاتف الشركة الرئيسي:</span> <a href="tel:+218925417007" class="fw-bold text-white">+218 92 541 7007</a></li>
+                        <li class="mb-2"><i class="fa-solid fa-phone text-warning me-2"></i><span data-key="f_tel_2">رقم التواصل:</span> 0917175988</li>
+                        <li class="mb-2"><i class="fa-solid fa-user-tie text-warning me-2"></i><span data-key="f_marketing_dir">مدير التسويق:</span> 0912107579</li>
+                        <li class="mb-2"><i class="fa-solid fa-bullhorn text-warning me-2"></i><span data-key="f_marketing_dept">قسم التسويق:</span> 0925070945</li>
+                        <li class="mb-2"><i class="fa-solid fa-building text-warning me-2"></i><span data-key="f_admin">الإدارة:</span> 0917175988</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold" data-key="f_col3_title">البريد والموقع الرسمي</h5>
+                    <p class="small mb-2"><i class="fa-solid fa-envelope me-2 text-warning"></i><a href="mailto:INFO@alsunbulah.ly">INFO@alsunbulah.ly</a></p>
+                    <p class="small mb-3"><i class="fa-solid fa-globe me-2 text-warning"></i><a href="http://www.alsunbulah.ly" target="_blank">www.alsunbulah.ly</a></p>
+                    <a href="https://wa.me/218925417007" target="_blank" class="btn btn-whatsapp-custom w-100"><i class="fa-brands fa-whatsapp me-2"></i><span data-key="f_btn_sales">تواصل مباشر مع إدارة المبيعات</span></a>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small py-2 text-secondary">
+                &copy; 2026 <span data-key="f_rights">جميع الحقوق محفوظة لـ</span> <strong><span data-key="f_company_name">شركة السنبلة المتكاملة لاستيراد المواد الغذائية</span></strong>.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // قاموس الترجمة الكامل (عربي - إنجليزي)
+        const translations = {
+            ar: {
+                top_location: "طرابلس - الماية، ليبيا",
+                top_whatsapp: "واتساب المبيعات",
+                brand_1: "السنبلة",
+                brand_2: "المتكاملة",
+                nav_home: "الرئيسية",
+                nav_about: "من نحن",
+                nav_products: "المنتجات والخلطات",
+                nav_calc: "حاسبة الطلبيات",
+                nav_contact: "تواصل معنا",
+                btn_commercial: "طلب كمية تجارية",
+                hero_badge: "الموزع المعتمد لشركة Komplet الألمانية في ليبيا",
+                hero_title: "من ليبيا إلى الأسواق العالمية… شراكة، جودة، ونمو مستدام",
+                hero_subtitle: "شركة ليبية متخصصة في تجارة وتوريد وتوزيع المنتجات الغذائية، وخلطات الخبز الجاهزة، ومحسنات المخبوزات، والمنتجات المجمدة للألبان والمخبوزات بأعلى المعايير.",
+                btn_sales: "تواصل مع المبيعات",
+                btn_catalog: "استعرض الكتالوج",
+                about_h2: "من هيا السنبلة؟",
+                about_h4: "وشني اللي يخلينا الشريك الأول لنجاح مشروعك؟",
+                about_p: "شركة السنبلة المتكاملة هي شركة ليبية يقع مقرها في طرابلس (الماية). نعمل على توفير خلطات ومكونات غذائية عالية الجودة من الأسواق العالمية وتطوير قطاع المخابز والصناعات الغذائية عبر شراكات موثوقة ونمو مستدام.",
+                vision_title: "رؤيتنا",
+                vision_desc: "أن نكون من الشركات الرائدة في ليبيا في استيراد وتوزيع مكونات المخابز.",
+                mission_title: "رسالتنا",
+                mission_desc: "توفير منتجات ذات جودة عالية وبناء شراكات موثوقة مع الموردين العالمية.",
+                values_title: "قيمنا",
+                values_desc: "الجودة، المصداقية، الالتزام، والشراكة طويلة الأمد.",
+                prod_badge: "German Quality | جودة ألمانية معتمدة",
+                prod_title: "منتجاتنا وخلطات المخابز المعتمدة",
+                prod_sub: "تشكيلة خلطات Komplet الألمانية المعتمدة من شركة السنبلة المتكاملة",
+                p1_tag: "جودة ألمانية",
+                p1_title: "سر صناعة الباغيت الفرنسي",
+                p1_desc: "مع خلطة باغيت بريميوم 10 من KOMPLET. جودة ألمانية ممتازة تضمن القوام الهش والقشرة الذهبية.",
+                p2_tag: "استخدامات متعددة",
+                p2_title: "مميزات واستخدامات الخلطة",
+                p2_desc: "مناسب لإعداد الخبز الأبيض الفرنسي بمختلف أشكاله، وممتاز لتحضير لفائف الباغيت الصغيرة.",
+                p3_tag: "خلطة حبوب Komplet",
+                p3_title: "سر الخبز الصحي الناجح",
+                p3_desc: "خلطة الحبوب الألمانية المعتمدة من KOMPLET التي تعطي العجين مرونة فائقة وطعماً ممتازاً.",
+                p4_tag: "استقرار وجودة",
+                p4_title: "جودة ثابتة في كل رغيف",
+                p4_desc: "ضمان استقرار نتائج العجن والخبز يومياً في مخبزك بأعلى المعايير الألمانية المعتمدة.",
+                btn_order: "اطلب المنتج الآن",
+                calc_title: "حاسبة طلبيات المخابز والمصانع",
+                calc_sub: "أدخل كمية العبوات المطلوبة لتصلك التفاصيل فوراً عبر الواتساب المباشر للشركة.",
+                calc_product_lbl: "اختر نوع المنتج / الخلطة المطلوب:",
+                calc_qty_lbl: "عدد الأكياس / العبوات:",
+                btn_send_calc: "إرسال الطلب عبر الواتساب المباشر",
+                f_col1_title: "شركة السنبلة المتكاملة",
+                f_col1_desc: "ALSUNBULAH Almutakmila Company<br>شركة ليبية متخصصة في تجارة وتوريد وتوزيع المنتجات الغذائية ومكونات المخابز والصناعات الغذائية.",
+                f_col1_addr: "المقر الرئيسي: ليبيا / طرابلس / الماية",
+                f_col2_title: "أرقام التواصل والطلبات",
+                f_tel_main: "هاتف الشركة الرئيسي:",
+                f_tel_2: "رقم التواصل:",
+                f_marketing_dir: "مدير التسويق:",
+                f_marketing_dept: "قسم التسويق:",
+                f_admin: "الإدارة:",
+                f_col3_title: "البريد والموقع الرسمي",
+                f_btn_sales: "تواصل مباشر مع إدارة المبيعات",
+                f_rights: "جميع الحقوق محفوظة لـ",
+                f_company_name: "شركة السنبلة المتكاملة لاستيراد المواد الغذائية"
+            },
+            en: {
+                top_location: "Tripoli - Al-Maya, Libya",
+                top_whatsapp: "Sales WhatsApp",
+                brand_1: "ALSUNBULAH",
+                brand_2: "Almutakmila",
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_products: "Products & Mixes",
+                nav_calc: "Order Calculator",
+                nav_contact: "Contact Us",
+                btn_commercial: "Commercial Order",
+                hero_badge: "Authorized Distributor for Komplet Germany in Libya",
+                hero_title: "From Libya to Global Markets… Partnership, Quality, & Sustainable Growth",
+                hero_subtitle: "A Libyan company specialized in trading, importing, and distributing food products, ready bakery mixes, improvers, and frozen dairy & bakery supplies.",
+                btn_sales: "Contact Sales",
+                btn_catalog: "Browse Catalog",
+                about_h2: "Who is Alsunbulah?",
+                about_h4: "Why Are We Your Premier Partner for Success?",
+                about_p: "ALSUNBULAH Almutakmila is a Libyan company headquartered in Tripoli (Al-Maya). We deliver top-grade bakery mixes and food ingredients from global markets, empowering local bakeries.",
+                vision_title: "Our Vision",
+                vision_desc: "To lead Libya in importing and distributing premium bakery ingredients.",
+                mission_title: "Our Mission",
+                mission_desc: "Providing exceptional quality products and building long-term international relations.",
+                values_title: "Our Values",
+                values_desc: "Quality, Integrity, Commitment, & Sustainable Partnerships.",
+                prod_badge: "German Quality Certified",
+                prod_title: "Certified Bakery Products & Mixes",
+                prod_sub: "Certified German Komplet mixes brought to you by Alsunbulah Company",
+                p1_tag: "German Quality",
+                p1_title: "The Secret of French Baguette",
+                p1_desc: "Komplet Baguette Premium 10 mix guarantees a crispy golden crust and light texture.",
+                p2_tag: "Multi-Purpose",
+                p2_title: "Features & Applications",
+                p2_desc: "Ideal for French white loaves, small baguette rolls, and authentic classic breads.",
+                p3_tag: "Komplet Grain Mix",
+                p3_title: "The Secret to Healthy Bread",
+                p3_desc: "Certified German seed & grain blend providing ultimate elasticity and superb taste.",
+                p4_tag: "Consistent Quality",
+                p4_title: "Consistent Quality Every Time",
+                p4_desc: "Ensures reliable daily baking results in your bakery under certified German standards.",
+                btn_order: "Order Now",
+                calc_title: "Bakery Order Calculator",
+                calc_sub: "Select the required quantity to send an instant order via direct WhatsApp.",
+                calc_product_lbl: "Select Product / Mix:",
+                calc_qty_lbl: "Number of Bags / Packages:",
+                btn_send_calc: "Send Direct WhatsApp Order",
+                f_col1_title: "ALSUNBULAH Almutakmila",
+                f_col1_desc: "ALSUNBULAH Almutakmila Company<br>A Libyan specialized company in foodstuff trading, importing, and distributing bakery ingredients.",
+                f_col1_addr: "Headquarters: Libya / Tripoli / Al-Maya",
+                f_col2_title: "Contact Numbers",
+                f_tel_main: "Main Phone:",
+                f_tel_2: "Contact Line:",
+                f_marketing_dir: "Marketing Director:",
+                f_marketing_dept: "Marketing Dept:",
+                f_admin: "Management:",
+                f_col3_title: "Email & Official Website",
+                f_btn_sales: "Direct Sales Contact",
+                f_rights: "All Rights Reserved to",
+                f_company_name: "ALSUNBULAH Almutakmila Foodstuff Importing Co."
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const isRTL = currentLang === 'ar';
+
+            // 1. تغيير الاتجاه
+            document.documentElement.setAttribute('lang', currentLang);
+            document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+
+            // 2. تبديل ملف CSS من Bootstrap بين RTL و LTR
+            const bootstrapCss = document.getElementById('bootstrap-css');
+            if (isRTL) {
+                bootstrapCss.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css');
+            } else {
+                bootstrapCss.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+            }
+
+            // 3. تحديث النصوص
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    elem.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // 4. تحديث نص زر التبديل
+            document.getElementById('langBtnText').innerText = isRTL ? 'English' : 'عربي';
+            if (document.getElementById('langBtnTextMobile')) {
+                document.getElementById('langBtnTextMobile').innerText = isRTL ? 'English' : 'عربي';
+            }
+        }
+
+        function sendOrder() {
+            var product = document.getElementById('productSelect').value;
+            var qty = document.getElementById('bagQty').value;
+            var text = currentLang === 'ar' 
+                ? "مرحباً شركة السنبلة المتكاملة، أرغب في طلب واستفسار عن:\nالمنتج: " + product + "\nالكمية المطلوبة: " + qty + " عبوة/كيس"
+                : "Hello ALSUNBULAH Almutakmila, I would like to order:\nProduct: " + product + "\nQuantity: " + qty + " Bag(s)";
+            var url = "https://wa.me/218925417007?text=" + encodeURIComponent(text);
+            var win = window.open(url, '_blank');
+            if (win) {
+                win.focus();
+            }
+        }
+    </script>
+</body>
+</html>
